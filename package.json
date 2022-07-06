@@ -1,0 +1,87 @@
+{
+  "name": "bitbucketeasypr",
+  "displayName": "Bitbucket EasyPR",
+  "description": "Opens Pull Request on Bitbucket from VSCode",
+  "version": "1.0.0",
+  "publisher": "luizgununes",
+  "icon": "assets/bitbucket.jpg",
+  "license": "See LICENSE.md",
+  "engines": {
+    "vscode": "^1.28.0"
+  },
+  "categories": [
+    "SCM Providers"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createPullRequest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luizgununes/BitbucketEasyPR.git"
+  },
+  "main": "./out/extension",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Bitbucket EasyPR Settings",
+      "properties": {
+        "easyPR.username": {
+          "type": "string",
+          "description": "Bitbucket Username ",
+          "default": "your-username",
+          "scope": "resource"
+        },
+        "easyPR.password": {
+          "type": "string",
+          "description": "Bitbucket Password (App Password)",
+          "default": "your-password",
+          "scope": "resource"
+        },
+        "easyPR.workspaceName": {
+          "type": "string",
+          "description": "Workspace Name",
+          "default": "your-workspace-name",
+          "scope": "resource"
+        },
+        "easyPR.projectName": {
+          "type": "string",
+          "description": "Project Name",
+          "default": "your-project-name",
+          "scope": "resource"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.createPullRequest",
+        "title": "Create Pull Request",
+        "category": "Bitbucket EasyPR"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "package": "node_modules/.bin/vsce package",
+    "publish": "node_modules/.bin/vsce publish"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.10.54",
+    "tslint": "^5.20.0",
+    "typescript": "^2.6.1",
+    "vsce": "^1.66.0",
+    "vscode": "^1.1.36"
+  },
+  "dependencies": {
+    "@types/url-join": "^4.0.0",
+    "axios": "^0.19.0",
+    "execa": "^1.0.0",
+    "git-url-parse": "^11.1.2",
+    "node-fetch": "^3.2.6",
+    "urljoin": "^0.1.5"
+  }
+}
