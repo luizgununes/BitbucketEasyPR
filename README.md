@@ -5,7 +5,7 @@ This extension adds a command that lets you open a pull request from the selecte
 ## Usage
 Use the command palette (⇧⌘P) to start a pull request by selecting the "EasyPR: Create Pull Request" command.
 
-![create a pr from vscode]()
+![create a pr from vscode](https://github.com/luizgununes/BitbucketEasyPR/blob/main/assets/example.png)
 
 ## Requirements
 You must have `git` installed and it has to be on the `$PATH`
