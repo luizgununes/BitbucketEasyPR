@@ -2,7 +2,7 @@
   "name": "bitbucketeasypr",
   "displayName": "Bitbucket EasyPR",
   "description": "Opens a Pull Request on Bitbucket from VSCode",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "luizgununes",
   "icon": "assets/bitbucket.jpg",
   "license": "See LICENSE.md",
