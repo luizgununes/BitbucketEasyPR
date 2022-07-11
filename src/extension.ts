@@ -89,7 +89,7 @@ export function activate(context: vscode.ExtensionContext) {
                 window.showInformationMessage(`Pull Request opened!`);
                 window.showInformationMessage(`Pull Request link copied to the clipboard!`);
     
-                vscode.env.clipboard.writeText(`https://bitbucket.org/${workspaceName}/amplifiqueme_front/pull-requests/${response.data.id}`);
+                vscode.env.clipboard.writeText(`https://bitbucket.org/${workspaceName}/${selectedRepository}/pull-requests/${response.data.id}`);
     
                 return response;
             } catch (error) {
