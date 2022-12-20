@@ -10,6 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
         let password = vscode.workspace.getConfiguration(undefined).get<string>(`easyPR.password`);
         let workspaceName = vscode.workspace.getConfiguration(undefined).get<string>(`easyPR.workspaceName`);
         let projectName = vscode.workspace.getConfiguration(undefined).get<string>(`easyPR.projectName`);
+        let openBrowser = vscode.workspace.getConfiguration(undefined).get<boolean>(`easyPR.openBrowser`);
 
         if (username == 'your-username') {
             window.showErrorMessage('You need to setup your username!');
@@ -90,6 +91,10 @@ export function activate(context: vscode.ExtensionContext) {
                 window.showInformationMessage(`Pull Request link copied to the clipboard!`);
     
                 vscode.env.clipboard.writeText(`https://bitbucket.org/${workspaceName}/${selectedRepository}/pull-requests/${response.data.id}`);
+
+                if (openBrowser == true) {
+                    vscode.env.openExternal(vscode.Uri.parse(`https://bitbucket.org/${workspaceName}/${selectedRepository}/pull-requests/${response.data.id}`));
+                }
     
                 return response;
             } catch (error) {
