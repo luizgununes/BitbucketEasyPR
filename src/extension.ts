@@ -157,6 +157,11 @@ export function activate(context: vscode.ExtensionContext) {
         placeHolder: "Choose the source branch:",
       });
 
+      if (!selectedSourceBranch) {
+        window.showWarningMessage("You have to select a source branch!");
+        return;
+      }
+
       if (selectedSourceBranch) {
         branchesArray.splice(branchesArray.indexOf(selectedSourceBranch), 1);
       }
@@ -172,6 +177,11 @@ export function activate(context: vscode.ExtensionContext) {
           placeHolder: "Choose the destination branch:",
         }
       );
+
+      if (!selectedDestinationBranch) {
+        window.showWarningMessage("You have to select a destination branch!");
+        return;
+      }
 
       await fetch(
         `https://api.bitbucket.org/2.0/repositories/${workspaceName}/${selectedRepository}/pullrequests`,
