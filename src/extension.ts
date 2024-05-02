@@ -1,8 +1,11 @@
 import CryptoUtil from "./crypto";
 import * as vscode from "vscode";
 import { window } from "vscode";
+import * as Mixpanel from "mixpanel";
 
 export function activate(context: vscode.ExtensionContext) {
+  var mixpanel = Mixpanel.init("0b90f4fd1c84469f81c443ad704f1756");
+
   let createPullRequest = vscode.commands.registerCommand(
     "extension.createPullRequest",
     async () => {
@@ -215,6 +218,13 @@ export function activate(context: vscode.ExtensionContext) {
               `Pull Request link copied to the clipboard!`
             );
 
+            mixpanel.track("Created Pull Request", {
+              username: username,
+              machineId: vscode.env.machineId,
+            });
+
+            // mixpanel.people.set(vscode.env.machineId, {username: username});
+
             vscode.env.clipboard.writeText(
               `https://bitbucket.org/${workspaceName}/${selectedRepository}/pull-requests/${pullRequest.id}`
             );
@@ -239,6 +249,10 @@ export function activate(context: vscode.ExtensionContext) {
               window.showErrorMessage(
                 "There are no changes on the source branch."
               );
+              mixpanel.track("No Changes", {
+                username: username,
+                machineId: vscode.env.machineId,
+              });
             } else {
               window.showErrorMessage(error.response.data.error.message);
             }

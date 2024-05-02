@@ -82,6 +82,7 @@
     "axios": "^1.6.7",
     "execa": "^8.0.1",
     "git-url-parse": "^14.0.0",
+    "mixpanel": "^0.18.0",
     "node-fetch": "^3.3.2",
     "urljoin": "^0.1.5",
     "vscode-test": "^1.6.1"
