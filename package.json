@@ -2,12 +2,12 @@
   "name": "bitbucketeasypr",
   "displayName": "Bitbucket EasyPR",
   "description": "Opens a Pull Request on Bitbucket from VSCode",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "publisher": "luizgununes",
   "icon": "assets/bitbucket.jpg",
   "license": "See LICENSE.md",
   "engines": {
-    "vscode": "^1.75.0"
+    "vscode": "^1.85.0"
   },
   "categories": [
     "SCM Providers"
@@ -22,34 +22,10 @@
       "type": "object",
       "title": "Bitbucket EasyPR Settings",
       "properties": {
-        "easyPR.username": {
-          "type": "string",
-          "description": "Bitbucket Username ",
-          "default": "your-username",
-          "scope": "resource"
-        },
-        "easyPR.password": {
-          "type": "string",
-          "description": "Bitbucket Password (App Password)",
-          "default": "your-password",
-          "scope": "resource"
-        },
-        "easyPR.workspaceName": {
-          "type": "string",
-          "description": "Workspace Name",
-          "default": "your-workspace-name",
-          "scope": "resource"
-        },
-        "easyPR.projectName": {
-          "type": "string",
-          "description": "Project Name",
-          "default": "your-project-name",
-          "scope": "resource"
-        },
         "easyPR.openBrowser": {
           "type": "boolean",
-          "description": "Open Bitbucket on Browser?",
-          "default": "false",
+          "description": "Open Bitbucket on Browser after creating PR?",
+          "default": false,
           "scope": "resource"
         }
       }
@@ -59,6 +35,16 @@
         "command": "extension.createPullRequest",
         "title": "Create Pull Request",
         "category": "Bitbucket EasyPR"
+      },
+      {
+        "command": "extension.clearCredentials",
+        "title": "Clear Stored Credentials",
+        "category": "Bitbucket EasyPR"
+      },
+      {
+        "command": "extension.reconfigureCredentials",
+        "title": "Reconfigure Credentials",
+        "category": "Bitbucket EasyPR"
       }
     ]
   },
@@ -66,25 +52,21 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
     "test": "npm run compile",
     "package": "node_modules/.bin/vsce package",
     "publish": "node_modules/.bin/vsce publish"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "tslint": "^5.20.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
     "typescript": "^5.3.3",
     "vsce": "^1.66.0"
   },
   "dependencies": {
-    "@types/url-join": "^4.0.3",
     "@types/vscode": "^1.86.0",
-    "axios": "^1.6.7",
-    "execa": "^8.0.1",
-    "git-url-parse": "^14.0.0",
-    "mixpanel": "^0.18.0",
-    "node-fetch": "^3.3.2",
-    "urljoin": "^0.1.5",
-    "vscode-test": "^1.6.1"
+    "node-fetch": "^3.3.2"
   }
 }
