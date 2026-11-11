@@ -1,9 +1,11 @@
 .vscode/**
+.github/**
 .vscode-test/**
 out/test/**
 out/**/*.map
 src/**
 .gitignore
+.eslintignore
 tsconfig.json
 vsc-extension-quickstart.md
 tslint.json

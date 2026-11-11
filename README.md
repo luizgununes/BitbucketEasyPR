@@ -1,7 +1,7 @@
 # Bitbucket EasyPR
 Visual Studio Code extension that allows you to create a pull request in Bitbucket with an easy command.
 
-You can download clicking [here.](https://marketplace.visualstudio.com/items?itemName=luizgununes.bitbucketeasypr)
+Install it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=luizgununes.bitbucketeasypr) or [Open VSX](https://open-vsx.org/extension/luizgununes/bitbucketeasypr).
 
 ## ⚠️ Important: API Token Required
 

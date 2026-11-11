@@ -14,9 +14,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/luizgununes/BitbucketEasyPR.git"
+    "url": "https://github.com/luizgununes/BitbucketEasyPR.git"
+  },
+  "homepage": "https://github.com/luizgununes/BitbucketEasyPR#readme",
+  "bugs": {
+    "url": "https://github.com/luizgununes/BitbucketEasyPR/issues"
   },
   "main": "./out/extension",
+  "activationEvents": [
+    "onCommand:extension.createPullRequest",
+    "onCommand:extension.clearCredentials",
+    "onCommand:extension.reconfigureCredentials"
+  ],
   "contributes": {
     "configuration": {
       "type": "object",
@@ -59,14 +68,11 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "@types/vscode": "1.85.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "@vscode/vsce": "^4.1.0",
     "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
-    "vsce": "^1.66.0"
-  },
-  "dependencies": {
-    "@types/vscode": "^1.86.0",
-    "node-fetch": "^3.3.2"
+    "typescript": "^5.3.3"
   }
 }
