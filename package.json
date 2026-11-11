@@ -2,15 +2,37 @@
   "name": "bitbucketeasypr",
   "displayName": "Bitbucket EasyPR",
   "description": "Opens a Pull Request on Bitbucket from VSCode",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "publisher": "luizgununes",
+  "author": {
+    "name": "Luiz Gustavo Nunes",
+    "email": "lgnunes.profissional@gmail.com",
+    "url": "https://lgnunes.dev"
+  },
   "icon": "assets/bitbucket.jpg",
-  "license": "See LICENSE.md",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "SCM Providers"
+  ],
+  "keywords": [
+    "bitbucket",
+    "bitbucket cloud",
+    "atlassian",
+    "pull request",
+    "pull requests",
+    "pr",
+    "git",
+    "scm",
+    "source control",
+    "code review",
+    "repository",
+    "workflow",
+    "api token",
+    "vscode extension",
+    "developer tools"
   ],
   "repository": {
     "type": "git",
